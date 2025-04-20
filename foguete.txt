@@ -1,0 +1,44 @@
+Zero(x) = 0
+Suc(x) = x + 1
+P(k,i) = (x(1), x(2), x(i), ..., x(k)) = x(i)
+C[f1, f2]
+
+// Funcao Antecessor
+Ant: N -> N
+Ant(0) = Zero(x)
+Ant(x+1) = x
+
+// Funcao Sub
+Sub: N² -> N
+Sub(x,0) = x
+Sub(x, y+1) = Ant(Sub(x,y))
+
+// Funcao Bool
+Bool: N -> N
+Bool(0) = Zero(x)
+Bool(x+1) = 1
+
+// Funcao Bool3
+Bool3: N³ -> N
+Bool3(0, 0, 0) = Zero(x)
+Bool3(x+1, y+1, z+1) = 1
+
+// Maior ou Igual
+MaiorI: N² -> N
+MaiorI(x, y) = Bool(Sub(x, y))
+
+// Fase1
+funcaoDeControleFase1(altura)
+funcaoDeControleFase1: N -> N
+funcaoDeControleFase1(x) = MaiorI(x, 160)
+
+// Fase2
+funcaoDeControleFase1(velocidade, inclinacao)
+funcaoDeControleFase2: N² -> N
+funcaoDeControleFase1(x, y) = Bool3(MaiorI(x, 300), MaiorI(1, y), MaiorI(y, 9))
+
+// Fase3
+FuncaoAutoDestruicao(altura, inclinacao)
+FuncaoAutoDestruicao: N² -> N
+FuncaoAutoDestruicao(x, y) = Bool3(MaiorI(159, x), MaiorI(11, x), MaiorI(y, 91))
+

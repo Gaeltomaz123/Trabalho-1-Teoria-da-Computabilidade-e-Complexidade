@@ -54,4 +54,8 @@ public class Main {
         if(foguete.getAltura() >= 10 && foguete.getAltura() < 160 && foguete.getInclinacao() > 90) return 1;
         return 0;
     }
+
+    public static int pred(int x) {
+        return (x == 0) ? 0 : x - 1;
+    }
 }
